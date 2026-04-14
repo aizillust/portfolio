@@ -50,17 +50,17 @@ var ICON_MIN3 = 20;   // minimum icon size in L3
 //add other art and replace some later
 
 function preload() {
-  imgStartBg   = loadImage('https://aizillust.github.io/p5js/game/bg1.jpg');
-  imgStartBtn  = loadImage('https://aizillust.github.io/p5js/game/start.png');
-  imgCursor    = loadImage('https://aizillust.github.io/p5js/game/cursor.png');
+  imgStartBg   = loadImage('bg1.jpg');
+  imgStartBtn  = loadImage('start.png');
+  imgCursor    = loadImage('cursor.png');
   //panels
-  panelImgs[1] = loadImage('https://aizillust.github.io/p5js/game/panel1.jpg');
-  panelImgs[2] = loadImage('https://aizillust.github.io/p5js/game/panel2.jpg');
-  panelImgs[3] = loadImage('https://aizillust.github.io/p5js/game/panel3.jpg');
+  panelImgs[1] = loadImage('panel1.jpg');
+  panelImgs[2] = loadImage('panel2.jpg');
+  panelImgs[3] = loadImage('panel3.jpg');
   //icons
-  iconImgs[0]  = loadImage('https://aizillust.github.io/p5js/game/icon1.png');
-  iconImgs[1]  = loadImage('https://aizillust.github.io/p5js/game/icon2.png');
-  iconImgs[2]  = loadImage('https://aizillust.github.io/p5js/game/icon3.png');
+  iconImgs[0]  = loadImage('icon1.png');
+  iconImgs[1]  = loadImage('icon2.png');
+  iconImgs[2]  = loadImage('icon3.png');
 }
 
 function setup() {
