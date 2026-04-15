@@ -2,16 +2,19 @@
   function initHeroParallax() {
     var hero = document.querySelector(".landing");
     var title = document.querySelector(".home-hero-title");
-    if (!hero || !title) return;
+    var tagline = document.querySelector(".home-hero-tagline");
+    if (!hero || !title || !tagline) return;
 
     var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) {
       title.classList.add("is-ready");
+      tagline.classList.add("is-ready");
       return;
     }
 
     requestAnimationFrame(function () {
       title.classList.add("is-ready");
+      tagline.classList.add("is-ready");
     });
 
     var ticking = false;
@@ -19,10 +22,14 @@
       var rect = hero.getBoundingClientRect();
       var heroHeight = Math.max(hero.offsetHeight, 1);
       var progress = Math.min(Math.max(-rect.top / heroHeight, 0), 1);
-      var shift = progress * 70;
-      var fade = 1 - progress * 1.25;
-      title.style.transform = "translate3d(0, " + (-shift) + "px, 0)";
-      title.style.opacity = String(Math.max(fade, 0));
+      var titleShift = progress * 70;
+      var titleFade = 1 - progress * 1.25;
+      var taglineShift = progress * 45;
+      var taglineFade = 1 - progress * 1.15;
+      title.style.transform = "translate3d(0, " + (-titleShift) + "px, 0)";
+      title.style.opacity = String(Math.max(titleFade, 0));
+      tagline.style.transform = "translate3d(0, " + (-taglineShift) + "px, 0)";
+      tagline.style.opacity = String(Math.max(taglineFade, 0));
     }
 
     function onScroll() {
