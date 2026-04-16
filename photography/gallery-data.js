@@ -18,7 +18,7 @@ window.PHOTO_CATEGORIES = [
 // Stops after a few consecutive missing files so the page doesn't loop forever.
 window.PHOTO_DISCOVERY = {
   startIndex: 1,
-  maxIndex: 80,
+  maxIndex: 180,
   consecutiveMissingStop: 6,
   exts: ['jpg', 'jpeg', 'png', 'webp'],
   categoryOverrides: {

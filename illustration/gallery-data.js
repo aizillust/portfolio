@@ -2,6 +2,9 @@
  * Gallery list for the illustration page + Projects preview.
  * Put image files only in illustration/images/ (no other file types there).
  * Edit `file` to match your filenames, or add/remove entries.
+ *
+ * Auto-discovery can append additional numbered files that are not listed
+ * (for example: 13.jpg, 14.jpg, 15.jpg...).
  */
 window.ILL_GALLERY_ITEMS = [
   { file: '01.jpg', alt: 'Illustration 1' },
@@ -15,4 +18,13 @@ window.ILL_GALLERY_ITEMS = [
   { file: '09.png', alt: 'Illustration 9' },
   { file: '10.jpg', alt: 'Illustration 10' },
   { file: '11.jpg', alt: 'Ladybug — character illustration' },
+  { file: '12.jpg', alt: 'Illustration 12' },
 ];
+
+window.ILL_GALLERY_DISCOVERY = {
+  startIndex: 1,
+  maxIndex: 180,
+  consecutiveMissingStop: 8,
+  exts: ['jpg', 'jpeg', 'png', 'webp'],
+  loadTimeoutMs: 900,
+};

@@ -528,6 +528,7 @@ small, .text-muted, .muted {
   margin-bottom: 1rem;
 }
 
+
 #projects .card,
 #blog-preview .card {
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -614,6 +615,7 @@ small, .text-muted, .muted {
     right: 0;
     background: linear-gradient(to left, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
   }
+
 
   .scroll-story-section .home-card-slide {
     width: 70%;
