@@ -326,6 +326,143 @@ small, .text-muted, .muted {
   transition: width 0.25s ease;
 }
 
+/* About page: single surface color #EAEAEA (nav, hero, main, footer) */
+.about-page {
+  background-color: #eaeaea;
+  min-height: 100vh;
+}
+
+.about-page .about-landing,
+.about-page main,
+.about-page footer {
+  letter-spacing: 0.028em;
+}
+
+.about-navbar,
+.about-footer {
+  background-color: #eaeaea !important;
+}
+
+.about-page .navbar-light.border-bottom {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.about-footer.border-top {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.about-page .navbar-light .dropdown-menu {
+  background-color: #eaeaea !important;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.06);
+}
+
+.about-landing {
+  min-height: min(88vh, 900px);
+  display: flex;
+  align-items: center;
+  background: #eaeaea;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.about-intro-copy {
+  max-width: 40rem;
+}
+
+.about-profile-img {
+  display: block;
+  margin-left: auto;
+  max-height: min(72vh, 560px);
+  width: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.about-fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.about-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-hero-greeting {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  color: #3c3332;
+  margin-bottom: 0.75rem;
+}
+
+.about-hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.5vw, 2.85rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #111;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+.about-hero-lead {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: #333;
+  margin-bottom: 1.5rem;
+  max-width: 40rem;
+}
+
+.about-hero-body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.about-page .publication-date {
+  margin-left: 0.5rem;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.about-cta-heading {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.45rem, 2.65vw, 1.95rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #111;
+}
+
+/* Resume grid: left-column section titles (reference: large bold serif) */
+.about-section-heading {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.3rem, 2.35vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #722f37;
+}
+
+/* Extra vertical rhythm between resume rows + space before CTA */
+.about-resume .about-resume-row {
+  margin-bottom: clamp(2.5rem, 4.5vw, 3.75rem);
+}
+
+.about-resume .about-resume-row:last-child {
+  margin-bottom: 0;
+}
+
+.about-cta-section {
+  margin-top: clamp(2.75rem, 5vw, 4rem);
+  padding-top: clamp(1.75rem, 3vw, 2.75rem);
+}
+
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(22px);
@@ -351,6 +488,12 @@ small, .text-muted, .muted {
   .home-hero-tagline.is-ready {
     opacity: 1;
     transform: none;
+    transition: none;
+  }
+  .about-fade-up,
+  .about-fade-up.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
     transition: none;
   }
   .home-scroll-cue-line {
@@ -901,6 +1044,35 @@ html.ill-lightbox-open {
 
 .blog-list-meta-date {
   font-weight: 700;
+}
+
+/* Blog index: hover “active” lift + scale (matches homepage card feel) */
+.blog-index .list-group {
+  overflow: visible;
+}
+
+.blog-index .list-group-item {
+  border-radius: 0.35rem;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  transform-origin: center center;
+}
+
+.blog-index .list-group-item:hover,
+.blog-index .list-group-item:focus-visible {
+  transform: scale(1.025);
+  box-shadow: 0 0.5rem 1.35rem rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  position: relative;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-index .list-group-item {
+    transition: none;
+  }
+  .blog-index .list-group-item:hover,
+  .blog-index .list-group-item:focus-visible {
+    transform: none;
+  }
 }
 
 /* Blog entry pages: back link + content column */

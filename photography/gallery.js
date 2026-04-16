@@ -5,7 +5,8 @@
 
   // Expected file format:
   //   photography/<categoryKey>/<n>.<ext>
-  const exts = Array.isArray(discoveryCfg.exts) && discoveryCfg.exts.length ? discoveryCfg.exts : ["jpg", "jpeg", "png", "webp"];
+  const defaultExts = Array.isArray(discoveryCfg.exts) && discoveryCfg.exts.length ? discoveryCfg.exts : ["jpg", "jpeg", "png", "webp"];
+  const categoryOverrides = discoveryCfg.categoryOverrides && typeof discoveryCfg.categoryOverrides === "object" ? discoveryCfg.categoryOverrides : {};
   const startIndex = typeof discoveryCfg.startIndex === "number" ? discoveryCfg.startIndex : 1;
   const maxIndex = typeof discoveryCfg.maxIndex === "number" ? discoveryCfg.maxIndex : 80;
   const consecutiveMissingStop =
@@ -53,9 +54,16 @@
     return "./" + categoryKey + "/" + file;
   }
 
+  function extsForCategory(categoryKey) {
+    const o = categoryOverrides[categoryKey];
+    if (o && Array.isArray(o.exts) && o.exts.length) return o.exts;
+    return defaultExts;
+  }
+
   async function discoverItems(categoryKey, title) {
     const items = [];
     let missingStreak = 0;
+    const exts = extsForCategory(categoryKey);
 
     for (let n = startIndex; n <= maxIndex; n++) {
       let foundExt = null;

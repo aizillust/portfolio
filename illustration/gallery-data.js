@@ -14,4 +14,5 @@ window.ILL_GALLERY_ITEMS = [
   { file: '08.png', alt: 'Illustration 8' },
   { file: '09.png', alt: 'Illustration 9' },
   { file: '10.jpg', alt: 'Illustration 10' },
+  { file: '11.jpg', alt: 'Ladybug — character illustration' },
 ];

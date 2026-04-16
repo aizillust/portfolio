@@ -3,6 +3,9 @@
  * Your files are expected at:
  *   photography/<category>/1.jpg, 2.jpg, 3.jpg, ...
  * (No 0-padding; category folders: landscapes, people, motorvehicles)
+ *
+ * Landscapes, People, and Motor Vehicles use .jpg assets; discovery for those
+ * folders only checks jpg/jpeg.
  */
 
 window.PHOTO_CATEGORIES = [
@@ -18,6 +21,11 @@ window.PHOTO_DISCOVERY = {
   maxIndex: 80,
   consecutiveMissingStop: 6,
   exts: ['jpg', 'jpeg', 'png', 'webp'],
+  categoryOverrides: {
+    landscapes: { exts: ['jpg', 'jpeg'] },
+    people: { exts: ['jpg', 'jpeg'] },
+    motorvehicles: { exts: ['jpg', 'jpeg'] },
+  },
   // Per-attempt load timeout (ms)
   loadTimeoutMs: 900,
 };
